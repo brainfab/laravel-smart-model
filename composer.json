@@ -1,0 +1,21 @@
+{
+    "name": "small-team/smart-model",
+    "description": "",
+    "authors": [
+        {
+            "name": "Max Kovpak",
+            "email": "max_kovpak@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "laravelbook/ardent": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "SmallTeam\\SmartModel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
