@@ -2,3 +2,8 @@
 composer.phar
 composer.lock
 .DS_Store
+.idea
+.idea/*
+.idea/workspace.xml
+.idea/scopes/
+.idea/scopes/*
