@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\File,
     Illuminate\Database\Eloquent\Model as Eloquent,
     Illuminate\Support\Facades\Config as Config,
     \Exception;
-use SmallTeam\Admin\Debug;
 
 /**
  * @author Max Kovpak <max_kovpak@hotmail.com>
@@ -30,7 +29,7 @@ class FilesHelper {
     protected function setUp(&$object) {
         $this->_base_path = public_path() . '/' . Config::get('smart-model::dir_upload') . '/' . StringTools::pluralize(strtolower(get_class($object))) . '/';
 
-        File::makeDirectory($this->_base_path, 777, true, true);
+        File::makeDirectory($this->_base_path, 0777, true, true);
         if (!$object->getKeyName()) {
             throw new Exception('Files ability can applies only for Models with Primary field specified');
         }
@@ -189,7 +188,7 @@ class FilesHelper {
                     $files = array($_FILES[$alias]);
                 }
 
-                File::makeDirectory($path.$source_folder, 777, true, true);
+                File::makeDirectory($path.$source_folder, 0777, true, true);
                 foreach($files as $file) {
                     $original_name = substr($file['name'], 0, strrpos($file['name'], '.'));
                     $original_ext = substr($file['name'], strlen($original_name)+1);
